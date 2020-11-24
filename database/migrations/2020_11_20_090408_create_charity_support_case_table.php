@@ -18,6 +18,7 @@ class CreateCharitySupportPcaseTable extends Migration
             $table->unsignedBigInteger('charity_id');
             $table->unsignedBigInteger('support_id');
             $table->char('case_id',15);
+            $table->char('status',1); // if the support complete in from the charity 
             $table->string('notes');
             $table->timestamps();
             $table->foreign('charity_id')->references('id')->on('charities');

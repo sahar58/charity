@@ -14,3 +14,17 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+########### start auth with admin ###############
+
+
+Route::get('/admin', 'adminController@dashboard')->middleware('adminCK');
+
+
+
+############## end auth with admin ################ 
