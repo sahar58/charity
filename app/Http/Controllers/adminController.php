@@ -39,10 +39,10 @@ class adminController extends Controller
             'password' => 'required|min:6'
         ]);
 
-        if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password]))
-            {
+        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
 
-                return redirect()->intended('/adminDash');
+
+            return redirect()->intended('/adminDash');
              }
             else{
                    return back()->withInput($request->only('email'));

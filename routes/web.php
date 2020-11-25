@@ -22,11 +22,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 ########### start auth with admin ###############
 
-
-Route::get('adminDash', 'adminController@dashboard')->middleware('auth:admin')->name('admin');
+Route::get('site', 'adminController@site')->middleware('auth:web')->name('site');
+Route::get('adminDash', 'adminController@dashboard')->middleware('auth:admin')->name('dashboard');
 
 Route::get('admin/login', 'adminController@adminLogin')->name('admin.Login');
 Route::post('admin/login', 'adminController@checkAdminLogin')->name('save.admin.login');
 
-Route::get('/site', 'adminController@site')->middleware('auth:web')->name('site');
+
 ############## end auth with admin ################ 

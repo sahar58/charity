@@ -5,13 +5,14 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use PhpParser\Node\Expr\AssignOp\Mod;   
 
 class admin extends Authenticatable// Model
 {
-    protected $fillable =['id','name','email','password','remember_token','created_at','updated_at'];
+    protected $fillable =['name','email','password','remember_token'];
 
 protected $hidden = [
-        'password',
+        'password'
     ];
-    protected  $guard  ="adminCK";
+    protected  $guard  ="admin";
 }
