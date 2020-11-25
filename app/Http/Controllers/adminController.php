@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Auth; 
 class adminController extends Controller
 {
     /**
@@ -11,13 +11,43 @@ class adminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+       // $this->middleware('auth:adminCK');
+       $this->middleware('auth:admin')->except(['adminLogin','checkAdminLogin']);//
+    }
     public function index()
     {
         //
     }
     public function dashboard()
     {
-        return view('admin.adminpage');
+        return view('adminpage');
+    }
+    public function site()
+    {
+        return view('welcome');
+    }
+    public function adminLogin()
+    {
+        return view('admin.adminLogin');
+    }
+    public function checkAdminLogin(Request $request)
+    {
+        $this->validate($request, [
+            'email'   => 'required|email',
+            'password' => 'required|min:6'
+        ]);
+
+        if(Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password]))
+            {
+
+                return redirect()->intended('/adminDash');
+             }
+            else{
+                   return back()->withInput($request->only('email'));
+                 // return view('welcome');
+             }
     }
     
     /**

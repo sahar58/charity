@@ -83,7 +83,7 @@ class pcaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(charity $pcase)
+    public function destroy(pcase $pcase)
     {
         $pcase->delete();
         return redirect()->route('pcase.index');

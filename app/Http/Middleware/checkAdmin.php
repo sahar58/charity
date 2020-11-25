@@ -15,6 +15,9 @@ class checkAdmin
      */
     public function handle($request, Closure $next)
     {
+       /* if (condition) {
+            # code...
+        }*/
         return $next($request);
     }
 }
