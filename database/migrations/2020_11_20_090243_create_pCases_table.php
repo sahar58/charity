@@ -14,7 +14,6 @@ class CreatePCasesTable extends Migration
     public function up()
     {
         Schema::create('pCases', function (Blueprint $table) {
-         //   $table->bigIncrements('id');
             $table->char('Nid',15)->primary();
             $table->string('name');
             $table->string('email')->unique();
@@ -29,6 +28,7 @@ class CreatePCasesTable extends Migration
             $table->binary('rent');
             $table->binary('private_account');
             $table->string('notes');
+            $table->char('support_status',1); // if all the support the case need complete it change to 'c'
             $table->rememberToken();
             $table->timestamps();
         });

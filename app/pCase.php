@@ -18,7 +18,7 @@ class pCase extends Authenticatable implements MustVerifyEmail
      */
     protected $fillable = [
        'Nid','name','email', 'password','phone','address','salary','birth_date',
-       'children_number','marital_status','monthly_treatment','rent','private_account','notes',
+       'children_number','marital_status','monthly_treatment','rent','private_account','notes','support_status',
     ];
 
     /**

@@ -36,3 +36,6 @@ Route::get('/charity/home', 'charityController@charityHome');
 
 //Route::view('admin/home', 'admin')->middleware('auth');
 
+Route::get('/admin/createCharity','adminController@createCharity')->name('createCharity');
+Route::post('/admin/storeCharity','adminController@storeCharity')->name('storeCharity');
+

@@ -62,9 +62,9 @@ class adminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(admin $admin)
     {
-        //
+        return view ('admin.edit',compact('admin'));
     }
 
     /**
@@ -74,10 +74,13 @@ class adminController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, admin $admin)
     {
-        //
+        $request->validate(['name'=>'required','email'=>'required','password'=>'required']);
+        $admin->update($request->all());
+        return redirect()->route('admin.index');
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -102,7 +105,7 @@ class adminController extends Controller
     {
         $admin= auth()->admin();
         $request->validate(['name'=>'required',
-        'city'=>'required','specialization'=>'required','age'=>'required']);  
+        'charity_number'=>'required','email'=>'required','password'=>'required']);  
         charity::create($request->all());
         return redirect()->route('admin.charities');
     }

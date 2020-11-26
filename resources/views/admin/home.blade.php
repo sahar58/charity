@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    <button class="mb-1 btn btn-info "><a class ="text-white" href="{{route('createCharity')}}">إضافة جمعية</a></button>
                 </div>
             </div>
         </div>

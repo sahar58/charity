@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\charity;
+use App\message;
 use Illuminate\Http\Request;
 
-class charityController extends Controller
+class messageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,9 +13,9 @@ class charityController extends Controller
      */
     public function index()
     {
-        $charity = charity::orderby('id','asc')->paginate(5); // to paginate data to pages 
+        $message = message::orderby('id','asc')->paginate(5); // to paginate data to pages 
        
-        return view ('charity.index',compact('charity'));
+        return view ('message.index',compact('message'));
     }
 
     /**
@@ -25,7 +25,7 @@ class charityController extends Controller
      */
     public function create()
     {
-        return view('charity.create');
+        return view('message.create');
     }
 
     /**
@@ -36,9 +36,9 @@ class charityController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate(['name'=>'required','email'=>'required','password'=>'required','address'=>'required','phone'=>'required','charity_number'=>'required']);
-        charity::create($request->all());
-        return redirect()->route('charity.index');
+        $request->validate(['id'=>'required','name'=>'required','email'=>'required','message'=>'required']);
+        message::create($request->all());
+        return redirect()->route('message.index');
     }
 
     /**
@@ -47,9 +47,9 @@ class charityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(charity $charity )
+    public function show(message $message)
     {
-        return view ('charity.show',compact('charity'));
+        return view ('message.show',compact('message'));
     }
 
     /**
@@ -58,9 +58,9 @@ class charityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(charity $charity)
+    public function edit(message $message)
     {
-        return view ('admin.edit',compact('admin'));
+        return view ('message.edit',compact('message'));
     }
 
     /**
@@ -70,11 +70,11 @@ class charityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,charity $charity)
+    public function update(Request $request, message $message)
     {
-        $request->validate(['name'=>'required','email'=>'required','password'=>'required','address'=>'required','phone'=>'required','charity_number'=>'required']);     
-        $charity->update($request->all());
-        return redirect()->route('charity.index');
+        $request->validate(['id'=>'required','name'=>'required','email'=>'required','message'=>'required']);
+        $message->update($request->all());
+        return redirect()->route('message.index');
     }
 
     /**
@@ -83,9 +83,9 @@ class charityController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(charity $charity)
+    public function destroy(message $message)
     {
-        $charity->delete();
-        return redirect()->route('charity.index');
+        $message->delete();
+        return redirect()->route('message.index');
     }
 }

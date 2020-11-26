@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\pCase;
 use Illuminate\Http\Request;
 
 class pCaseController extends Controller
@@ -13,7 +13,9 @@ class pCaseController extends Controller
      */
     public function index()
     {
-        //
+        $pCase = pCase::orderby('Nid','asc')->paginate(5); // to paginate data to pages 
+       
+        return view ('pCase.index',compact('pCase'));
     }
 
     /**
@@ -23,7 +25,7 @@ class pCaseController extends Controller
      */
     public function create()
     {
-        //
+        return view('pCase.create');
     }
 
     /**
@@ -34,7 +36,9 @@ class pCaseController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate(['Nid'=>'required','name'=>'required','email'=>'required','password'=>'required','phone'=>'required','address'=>'required','salary'=>'required','birth_Date'=>'required','marital_status'=>'required','rent'=>'required','private_account'=>'required']);
+        charity::create($request->all());
+        return redirect()->route('charity.index');
     }
 
     /**
@@ -43,9 +47,9 @@ class pCaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(pCase $pCase)
     {
-        //
+        return view ('pCase.show',compact('pCase'));
     }
 
     /**
@@ -54,9 +58,9 @@ class pCaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(pCase $pCase)
     {
-        //
+        return view ('pCase.edit',compact('pCase'));
     }
 
     /**
@@ -66,9 +70,11 @@ class pCaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, pCase $pCase)
     {
-        //
+        $request->validate(['Nid'=>'required','name'=>'required','email'=>'required','password'=>'required','phone'=>'required','address'=>'required','salary'=>'required','birth_Date'=>'required','marital_status'=>'required','rent'=>'required','private_account'=>'required']);
+        $pCase->update($request->all());
+        return redirect()->route('pCase.index');
     }
 
     /**
@@ -77,8 +83,9 @@ class pCaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(pCase $pCase)
     {
-        //
+        $pCase->delete();
+        return redirect()->route('pCase.index');
     }
 }
