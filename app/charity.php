@@ -12,6 +12,7 @@ class charity extends Authenticatable implements MustVerifyEmail
     protected $guard = 'charity';
 // try edit
 //اخيرا يا عبصمد :D :D 
+// اخيرا يا عصام 😂😂
     /**
      * The attributes that are mass assignable.
      *
