@@ -6,10 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class charity extends Authenticatable implements MustVerifyEmail
+class pCase extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
-    protected $guard = 'charity';
+    protected $guard = 'pCase';
 
     /**
      * The attributes that are mass assignable.
@@ -17,7 +17,8 @@ class charity extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $fillable = [
-        'name','logo','email', 'password','address','phone','about','charity_number','admin_id',
+       'Nid','name','email', 'password','phone','address','salary','birth_date',
+       'children_number','marital_status','monthly_treatment','rent','private_account','notes',
     ];
 
     /**
@@ -37,8 +38,4 @@ class charity extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    public function admin()
-    {
-        return $this->belongsTo('App\admin');
-    }
 }

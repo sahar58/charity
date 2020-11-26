@@ -18,8 +18,17 @@ class RedirectIfAuthenticated
      */
     public function handle($request, Closure $next, $guard = null)
     {
-        if (Auth::guard($guard)->check()) {
+        if ( $guard=='admin'&& Auth::guard($guard)->check()) {
+            return redirect(RouteServiceProvider::ADMIN);
+        }
+        else if($guard=='user'&& Auth::guard($guard)->check()){
             return redirect(RouteServiceProvider::HOME);
+        }
+        else if($guard=='charity'&& Auth::guard($guard)->check()){
+            return redirect(RouteServiceProvider::CHARITY);
+        }
+        else if($guard=='pCase'&& Auth::guard($guard)->check()){
+            return redirect(RouteServiceProvider::PCASE);
         }
 
         return $next($request);

@@ -40,6 +40,18 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        'charity' => [
+            'driver' => 'session',
+            'provider' => 'charities',
+        ],
+        'pCase' => [
+            'driver' => 'session',
+            'provider' => 'pCases',
+        ],
 
         'api' => [
             'driver' => 'token',
@@ -70,11 +82,18 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\admin::class,
+        ],
+        'charities' => [
+            'driver' => 'eloquent',
+            'model' => App\charity::class,
+        ],
+        'pCases' => [
+            'driver' => 'eloquent',
+            'model' => App\pCase::class,
+        ],
     ],
 
     /*
@@ -95,6 +114,18 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'pCase' => [
+            'provider' => 'pCases',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'charity' => [
+            'provider' => 'charities',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

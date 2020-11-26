@@ -14,3 +14,25 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+//Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
+Auth::routes();
+
+Route::get('/admin/login', 'Auth\LoginController@showAdminLogin');
+Route::post('/admin/login', 'Auth\LoginController@checkAdminLogin')->name('checkAdmin');
+Route::get('/admin/home', 'adminController@adminHome');
+
+Auth::routes();
+
+Route::get('/charity/login', 'Auth\LoginController@showCharityLogin');
+Route::post('/charity/login', 'Auth\LoginController@checkCharityLogin')->name('checkCharity');
+Route::get('/charity/home', 'charityController@charityHome');
+
+//Route::view('admin/home', 'admin')->middleware('auth');
+
