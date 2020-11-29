@@ -113,9 +113,13 @@
                         طعام وصحه وملبس ومسكن
                       </td>
                       <td>
+                      <form action="{{route('charity.destroy',$item->id)}}" method="post" style="display: contents;">
+                          @csrf
+                          @method('DELETE') 
                         <span class="table-remove">
                           <button class="btn btn-danger btn-rounded btn-md my-0"><i class="fa fa-trash"></i></button>
                         </span>
+                    </form>
                       </td>
                     
                     </tr>
@@ -134,54 +138,7 @@
   </div>
   <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
   <h2>الحالات المسجله</h2>
-  <!-- <table id="dt-basic-checkbox" class="table" cellspacing="0" width="100%">
-    <thead>
-      <tr>
-        <th></th>
-        <th class="th-sm">الاسم
-        </th>
-        <th class="th-sm">الرقم القومى
-        </th>
-        <th class="th-sm">العمر
-        </th>
-        <th class="th-sm">نوع الدعم
-        </th>
-        <th class="th-sm">العنوان
-        </th>
-        <th class="th-sm">الشخص المسئول
-        </th>
-        <th class="th-sm">رقم الهاتف
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td>System Architect</td>
-        <td>Edinburgh</td>
-        <td>61</td>
-        <td>2011/04/25</td>
-        <td>$320,800</td>
-      </tr>
-    </tbody>
-    <tfoot>
-      <tr>
-        <th>
-        </th>
-        <th>Position
-        </th>
-        <th>Office
-        </th>
-        <th>Age
-        </th>
-        <th>Start date
-        </th>
-        <th>Salary
-        </th>
-      </tr>
-    </tfoot>
-  </table> -->
-  <!--Table-->
+  
       <span class="float-right mb-3 mr-2"><a href="#!" id="addrow"
                     class="text-success btn-rounded btn-lg mr-3">
                     <i class="fa fa-user-plus"></i></a></span>
@@ -214,9 +171,14 @@
                         <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-sort"></i></a></span>
                       </td>
                       <td>
+
+                      <form action="{{route('pCase.destroy',$item->Nid)}}" method="post" style="display: contents;">
+                          @csrf
+                          @method('DELETE')
                         <span class="table-remove">
                           <button class="btn btn-danger btn-rounded btn-md my-0"><i class="fa fa-trash"></i></button>
                         </span>
+                      </form>
                       </td>
                     </tr>
     @endforeach

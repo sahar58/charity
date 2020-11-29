@@ -40,5 +40,19 @@ Route::get('/admin/createCharity','adminController@createCharity')->name('create
 Route::post('/admin/storeCharity','adminController@storeCharity')->name('storeCharity');
 Route::get('/admin/charities','adminController@getAllCharities');
 
+################### call all controller 
+// to call all the function in the controller
+Route::resource('/charity','charityController');
+Route::resource('/admin','charityController');
+Route::resource('/pCase','pCaseController');
+
+
+
+
+##############endregion
 // show home page
 Route::view('/tryhomepage', 'home');
+//**  show charity public profile page
+//Route::view('/charprof', 'charity/charPublicPro');
+//***  show charity profile
+Route::view('/charprof', 'charity/charPro');
