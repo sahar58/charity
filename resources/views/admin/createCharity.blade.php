@@ -18,7 +18,7 @@
                         <li>{{$err}}</li>
                     @endforeach
                     </ul>
-                    <form class="form mt-5 pt-1" action="{{route('admin.storeCharity')}}" method="post">
+                    <form class="form mt-5 pt-1" action="{{route('storeCharity')}}" method="post">
                     @csrf <!--responsible of security -->
                     @method('POST')
 
