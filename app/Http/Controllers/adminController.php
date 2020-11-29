@@ -7,6 +7,7 @@ use Auth;
 use App\admin;
 use App\charity;
 use App\pCase;
+use Illuminate\Support\Facades\Hash;
 //use Carbon\Carbon;
 
 
@@ -114,6 +115,7 @@ class adminController extends Controller
         'charity_number'=>'required','email'=>'required','password'=>'required']); 
         $data =$request->all();
         $data['admin_id']=$admin->id;
+        $data['password']=Hash::make($request->password);
         $admin->charities()->create($data);
         return redirect()->intended('/admin/home');
 
