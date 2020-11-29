@@ -76,7 +76,11 @@ class charityController extends Controller
         $charity->update($request->all());
         return redirect()->route('charity.index');
     }
-
+    public function charityHome()
+    {
+        return view('homex');
+    }
+    
     /**
      * Remove the specified resource from storage.
      *

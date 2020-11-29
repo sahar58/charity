@@ -6,13 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class charity extends Authenticatable implements MustVerifyEmail
+class charity extends Authenticatable 
 {
-    use Notifiable;
+    //use Notifiable;
     protected $guard = 'charity';
-// try edit
-//اخيرا يا عبصمد :D :D 
-// اخيرا يا عصام 😂😂
+
     /**
      * The attributes that are mass assignable.
      *

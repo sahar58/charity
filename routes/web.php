@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 //Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+ Route::get('/home', 'HomeController@index')->name('home');
 
 // Auth::routes();
 
@@ -40,3 +40,5 @@ Route::get('/admin/createCharity','adminController@createCharity')->name('create
 Route::post('/admin/storeCharity','adminController@storeCharity')->name('storeCharity');
 Route::get('/admin/charities','adminController@getAllCharities');
 
+// show home page
+Route::view('/tryhomepage', 'home');

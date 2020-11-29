@@ -8,7 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class pCase extends Authenticatable implements MustVerifyEmail
 {
-    use Notifiable;
+    //use Notifiable;
     protected $guard = 'pCase';
 
     /**
