@@ -77,6 +77,10 @@ class pCaseController extends Controller
         return redirect()->route('pCase.index');
     }
 
+    public function caseHome()
+    {
+        return view('home');
+    }
     /**
      * Remove the specified resource from storage.
      *

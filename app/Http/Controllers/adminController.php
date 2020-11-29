@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\admin;
 use App\charity;
+use App\pCase;
 
 
 class adminController extends Controller
@@ -95,7 +96,10 @@ class adminController extends Controller
 
     public function adminHome()
     {
-        return view('admin.home');
+        $data['person'] = pCase::orderby('name','asc')->get(); // to paginate data to pages 
+        $data['charity'] =charity::orderby('id','asc')->get();
+       // $charityData = charity::orderby('id','asc')->get();
+        return view('admin.homex',compact('data'));
     }
     public function createCharity()
     {

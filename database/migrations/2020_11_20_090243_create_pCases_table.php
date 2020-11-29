@@ -23,10 +23,10 @@ class CreatePCasesTable extends Migration
             $table->integer('salary');
             $table->date('birth_date');
             $table->integer('children_number');
-            $table->binary('marital_status');
-            $table->binary('monthly_treatment');
-            $table->binary('rent');
-            $table->binary('private_account');
+            $table->char('marital_status',1);
+            $table->char('monthly_treatment',1);
+            $table->char('rent',1);
+            $table->char('private_account',1);
             $table->string('notes');
             $table->char('support_status',1); // if all the support the case need complete it change to 'c'
             $table->rememberToken();

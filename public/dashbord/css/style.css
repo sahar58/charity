@@ -1,0 +1,251 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  direction: rtl;
+  font-family: 'cairo','sans-serif';
+  
+}
+
+#person,
+#charity {
+  margin-bottom: 9rem;
+}
+
+.pt-3-half {
+  padding-top: 1.4rem;
+}
+</style>
+
+/* Float four columns side by side */
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+/* Remove extra left and right margins, due to padding */
+.row {margin: 0 -5px;}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive columns */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+
+@media screen and (max-width: 992px) {
+  .column {
+    width: 25%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+/* Style the counter cards */
+.card {
+  padding:0px;
+}
+@media screen and (max-width: 576px) {
+  .column {
+    width: 50%;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .card {
+    padding:0px;
+  }
+}
+ 
+
+/*Testimonials section style*/
+.testimonials{
+    overflow: hidden;
+}
+.testi{
+    background: url(../img/cover3.jpg) no-repeat center;
+    background-size: cover;
+     
+    overflow: hidden;
+}
+.testi .owl-carousel .owl-item img {
+    width: 60%;
+    margin: 20px auto 0
+}
+
+.hr-line{
+    width: 10%;
+    background: #3AADE6;
+    border-bottom: 1px solid #3AADE6
+}
+
+.testi img
+{
+  width: 75%;
+
+}
+
+/*End Testimonials section style*/
+
+
+/* footer 
+================================= */
+   
+  .main-footer {
+    background:linear-gradient(90deg, #3c3b3f 0%,#605c3c 100% );
+    color: #fff;
+  }
+  .main-footer .footer-title {
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    margin-bottom: 50px;
+  }
+  .main-footer .footer-title .title-under {
+    background: #fff;
+    margin: 15px 0;
+    text-align: right;
+  }
+  
+  .main-footer .footer-content {
+    text-align: right;
+    font-size: 25px;
+    margin-top: 30px;
+  }
+  
+  .footer-content .logo-footer
+  {
+    width: 70%;
+  }
+  .footer-bottom {
+    background: #605c3c;
+    padding: 3px;
+    margin: 0 auto;
+  }
+  
+  .footer-form .form-group {
+    margin-bottom: 5px;
+  }
+  .footer-form .form-control {
+    background: #c7be74;
+    color: #fff;
+    border: 0;
+    border-radius: 0;
+    margin-bottom: 5px;
+    border: 1px solid #fff;
+    resize: none;
+   	text-align: right;
+  }
+  .footer-form .btn-submit {
+    border-radius: 0;
+    background: #605c3c;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    -moz-transition: all, 0.5s;
+    -o-transition: all, 0.5s;
+    -webkit-transition: all, 0.5s;
+    transition: all, 0.5s;
+  }
+
+  .icon-col
+{
+   
+  float: right;
+  margin-top:50px;
+}
+.icon-col ul
+{
+	display: inline-block;
+  top: 50px;	
+	text-align: right;
+	
+}
+ 
+.icon-col ul li
+{
+	list-style: none;
+	margin-right: 10px;
+  display: inline-block;
+}
+.icon-col  .fa
+{
+  color:#c7be74;
+  font-size: 30px;
+}
+  .footer-form .btn-submit:hover {
+    background: #fff;
+  }
+  .footer-form input:-moz-placeholder,
+  .footer-form textarea:-moz-placeholder {
+    color: #fff;
+  }
+  .footer-form input::-moz-placeholder,
+  .footer-form textarea::-moz-placeholder {
+    color: #fff;
+  }
+  .footer-form input:-ms-input-placeholder,
+  .footer-form textarea:-ms-input-placeholder {
+    color: #fff;
+  }
+  .footer-form input::-webkit-input-placeholder,
+  .footer-form textarea::-webkit-input-placeholder {
+    color: #fff;
+  }
+
+
+.col-serv ul
+{
+ display:block;
+ padding: 0 ;
+}
+
+.col-serv ul li
+{
+ list-style: none;
+ display:  block;
+ line-height:2.25em;
+ font-size: 25px;
+ font-weight: 500;
+ text-align: center;
+}
+
+.col-serv a
+{
+  text-align: center;
+ color: #c7be74;
+ font-size:30px;
+ text-decoration: none;	
+ 
+}
+/* .footer-content .footer-contact
+{
+  margin: 50px auto;
+
+} */
+.footer-content .footer-contact p
+{
+  font-size: 25px;
+  font-weight: 400;
+  font-family: 'cairo';
+}
+
+
+
+
+
