@@ -1,4 +1,6 @@
+@extends('layouts.adminDash')
 
+@section('content')
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -18,6 +20,8 @@
                     </ul>
                     <form class="form mt-5 pt-1" action="{{route('storeCharity')}}" method="post">
                     @csrf <!--responsible of security -->
+                    @method('POST')
+
                     <div class="form-group">
                         <label for="my-input">رقم الجمعية</label>
                         <input id="my-input" class="form-control" name="charity_number">
@@ -49,3 +53,4 @@
         </div>
     </div>
 </div>
+@endsection

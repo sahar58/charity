@@ -37,7 +37,7 @@
       
       
       
-       <span class="float-right mb-3 mr-2"><a href="#!" id="add-row"
+       <span class="float-right mb-3 mr-2"><a href="{{route('createCharity')}}" id="add-row"
                     class="text-success btn-rounded btn-lg mr-3">
                     <i class="fa fa-user-plus"></i></a></span>
                 <table id="ctable" class="table table-bordered table-responsive-md table-striped text-center">
