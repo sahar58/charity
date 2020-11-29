@@ -38,7 +38,7 @@ Route::get('/charity/home', 'charityController@charityHome');
 
 Route::get('/admin/createCharity','adminController@createCharity')->name('createCharity');
 Route::post('/admin/storeCharity','adminController@storeCharity')->name('storeCharity');
-Route::get('/admin/charities','adminController@getAllCharities');
+Route::get('/admin/charities','adminController@getAllCharities')->name('admin.charities');
 
 // show home page
 Route::view('/tryhomepage', 'home');
