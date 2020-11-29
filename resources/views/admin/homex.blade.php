@@ -203,12 +203,13 @@
 
   <!--Table body-->
   <tbody>
+  @foreach($data['person'] as $item)  
     <tr>
-                      <td class="pt-3-half" contenteditable="true">احمد حسين على حسين</td>
-                      <td class="pt-3-half" contenteditable="true">280305484784</td>
-                      <td class="pt-3-half" contenteditable="true">28</td>
-                      <td class="pt-3-half" contenteditable="true">اسكندريه-سيدى بشر</td>
-                      <td class="pt-3-half" contenteditable="true">0121184848</td>
+                      <td class="pt-3-half" contenteditable="true">{{$item->name}}</td>
+                      <td class="pt-3-half" contenteditable="true">{{$item->Nid}}</td>
+                      <td class="pt-3-half" contenteditable="true">{{$item->birth_date}}</td>
+                      <td class="pt-3-half" contenteditable="true">{{$item->address}}</td>
+                      <td class="pt-3-half" contenteditable="true">{{$item->phone}}</td>
                       <td class="pt-3-half">
                         <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-sort"></i></a></span>
                       </td>
@@ -218,54 +219,8 @@
                         </span>
                       </td>
                     </tr>
-                    <!-- This is our clonable table line -->
-                    <tr>
-                      <td class="pt-3-half" contenteditable="true">زياد احمد طلعت شامى</td>
-                      <td class="pt-3-half" contenteditable="true">280305484784</td>
-                      <td class="pt-3-half" contenteditable="true">28</td>
-                      <td class="pt-3-half" contenteditable="true">اسكندريه-سيدى بشر</td>
-                      <td class="pt-3-half" contenteditable="true">0121184848</td>
-                      <td class="pt-3-half">
-                        <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-sort"></i></a></span>
-                      </td>
-                      <td>
-                        <span class="table-remove">
-                          <button class="btn btn-danger btn-rounded btn-md my-0"><i class="fa fa-trash"></i></button>
-                        </span>
-                      </td>
-                    </tr>
-                    <!-- This is our clonable table line -->
-                    <tr>
-                      <td class="pt-3-half" contenteditable="true">على احمد السيد كامل</td>
-                      <td class="pt-3-half" contenteditable="true">280305484784</td>
-                      <td class="pt-3-half" contenteditable="true">28</td>
-                      <td class="pt-3-half" contenteditable="true">اسكندريه-سيدى بشر</td>
-                      <td class="pt-3-half" contenteditable="true">0121184848</td>
-                      <td class="pt-3-half">
-                        <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-sort"></i></a></span>
-                      </td>
-                      <td>
-                        <span class="table-remove">
-                          <button class="btn btn-danger btn-rounded btn-md my-0"><i class="fa fa-trash"></i></button>
-                        </span>
-                      </td>
-                    </tr>
-                    <!-- This is our clonable table line -->
-                    <tr>
-                      <td class="pt-3-half" contenteditable="true">نجوى محمد مصطفى لطفى</td>
-                      <td class="pt-3-half" contenteditable="true">280305484784</td>
-                      <td class="pt-3-half" contenteditable="true">28</td>
-                      <td class="pt-3-half" contenteditable="true">اسكندريه-سيدى بشر</td>
-                      <td class="pt-3-half" contenteditable="true">0121184848</td>
-                      <td class="pt-3-half">
-                        <span class="table-up"><a href="#!" class="indigo-text"><i class="fa fa-sort"></i></a></span>
-                      </td>
-                      <td>
-                        <span class="table-remove">
-                          <button class="btn btn-danger btn-rounded btn-md my-0"><i class="fa fa-trash"></i></button>
-                        </span>
-                      </td>
-                    </tr>
+    @endforeach
+                   
   </tbody>
   <!--Table body-->
   <!-- Add rows button-->

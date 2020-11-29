@@ -10,6 +10,7 @@ class pCase extends Authenticatable implements MustVerifyEmail
 {
     //use Notifiable;
     protected $guard = 'pCase';
+    protected $table ='pcases';
 
     /**
      * The attributes that are mass assignable.

@@ -7,6 +7,7 @@ use Auth;
 use App\admin;
 use App\charity;
 use App\pCase;
+//use Carbon\Carbon;
 
 
 class adminController extends Controller
@@ -98,6 +99,7 @@ class adminController extends Controller
     {
         $data['person'] = pCase::orderby('name','asc')->get(); // to paginate data to pages 
         $data['charity'] =charity::orderby('id','asc')->get();
+       // $data['person']['age']=Carbon::parse($data['person']->birth_date)->age;
        // $charityData = charity::orderby('id','asc')->get();
         return view('admin.homex',compact('data'));
     }
