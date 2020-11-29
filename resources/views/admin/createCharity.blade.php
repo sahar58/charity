@@ -18,14 +18,14 @@
                         <li>{{$err}}</li>
                     @endforeach
                     </ul>
-                    <form class="form mt-5 pt-1" action="{{route('storeCharity')}}" method="post">
+                    <form class="form mt-5 pt-1" action="{{route('admin.storeCharity')}}" method="post">
                     @csrf <!--responsible of security -->
                     @method('POST')
 
                     <div class="form-group">
                         <label for="my-input">رقم الجمعية</label>
                         <input id="my-input" class="form-control" name="charity_number">
-                    </div
+                    </div>
                     <div class="form-group">
                         <label for="my-input">اسم الجمعية</label>
                         <input id="my-input" class="form-control" name="name">

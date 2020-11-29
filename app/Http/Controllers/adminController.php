@@ -116,6 +116,7 @@ class adminController extends Controller
         $data['admin_id']=$admin->id;
         $admin->charities()->create($data);
         return redirect()->intended('/admin/home');
+
     }
     public function getAllCharities(){
         $admin= auth()->admin();

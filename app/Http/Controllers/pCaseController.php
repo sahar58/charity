@@ -87,9 +87,9 @@ class pCaseController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(pCase $pCase)
+    public function destroy($Nid)
     {
-        $pCase->delete();
-        return redirect()->route('pCase.index');
+        pCase::where('Nid',$Nid)->delete();
+        return redirect()->intended('admin/home');
     }
 }

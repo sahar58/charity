@@ -90,6 +90,6 @@ class charityController extends Controller
     public function destroy(charity $charity)
     {
         $charity->delete();
-        return redirect()->route('charity.index');
+        return redirect()->intended('admin/home');
     }
 }
