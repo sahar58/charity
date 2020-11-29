@@ -109,5 +109,10 @@ class adminController extends Controller
         charity::create($request->all());
         return redirect()->route('admin.charities');
     }
+    public function getAllCharities(){
+        $admin= auth()->admin();
+        $charity = $admin->charity;
+        return view('admin.charities',compact('charity'));
+    }
 
 }

@@ -38,4 +38,5 @@ Route::get('/charity/home', 'charityController@charityHome');
 
 Route::get('/admin/createCharity','adminController@createCharity')->name('createCharity');
 Route::post('/admin/storeCharity','adminController@storeCharity')->name('storeCharity');
+Route::get('/admin/charities','adminController@getAllCharities');
 
