@@ -115,7 +115,7 @@ class adminController extends Controller
         $request->validate(['name'=>'required',
         'charity_number'=>'required','email'=>'required','password'=>'required']); 
         $charity = new charity($request->all());
-       // $charity=$request->all(); 
+        // $charity=$request->all(); 
 
        $admin->charities->save($charity);
         //charity::create($request->all());
