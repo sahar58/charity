@@ -107,12 +107,20 @@ class adminController extends Controller
     {
         return view('admin.createCharity');
     }
-    public function storeCharity()
+    public function storeCharity(Request $request)
     {
-        $admin= auth()->admin();
+        
+        $admin= Auth::guard('admin')->user();
+        //$request->admin_id=$admin->admin_id;
         $request->validate(['name'=>'required',
-        'charity_number'=>'required','email'=>'required','password'=>'required']);  
-        charity::create($request->all());
+        'charity_number'=>'required','email'=>'required','password'=>'required']); 
+        $charity = new charity($request->all());
+       // $charity=$request->all(); 
+
+       $admin->charities->save($charity);
+        //charity::create($request->all());
+       // $charity->admin_id=$admin->admin_id;
+      //  $admin->save();
         return redirect()->route('admin.charities');
     }
     public function getAllCharities(){
