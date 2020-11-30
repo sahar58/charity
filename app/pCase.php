@@ -17,10 +17,10 @@ class pCase extends Authenticatable implements MustVerifyEmail
      *
      * @var array
      */
-    protected $fillable = [
-       'Nid','name','email', 'password','phone','address','salary','birth_date',
+    protected $fillable = ['Nid','name','email', 'password','phone','address','salary','birth_date',
        'children_number','marital_status','monthly_treatment','rent','private_account','notes','support_status',
     ];
+    protected $primaryKey = 'Nid';
 
     /**
      * The attributes that should be hidden for arrays.

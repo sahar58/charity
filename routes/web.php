@@ -47,7 +47,7 @@ Route::resource('/admin','charityController');
 Route::resource('/pCase','pCaseController');
 Route::resource('/home','HomeController');
 
-Route::get('/showPublicProfile/{pCase}', 'HomeController@pubSearchPro')->name('home.pubSearchPro');
+Route::get('/showPublicProfile/{pCase_id}', 'HomeController@pubSearchPro')->name('home.pubSearchPro');
 
 ##############endregion
 // show home page

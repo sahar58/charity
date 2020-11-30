@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\admin;
 use App\charity;
 use App\pCase;
+use App\support;
 use App\charity_support_pCase;
 
 class HomeController extends Controller
@@ -29,11 +30,14 @@ class HomeController extends Controller
     {
         return view('home');
     }
-    public function pubSearchPro(pCase $casez)
+    public function pubSearchPro($id)
     {
-       // $casez['case'] =pCase::where('Nid','=',$pCase->Nid)->get();
-       // $casez['support'] =charity_support_pCase::where('case_id','=',$pCase->Nid)->select('support_id')->orderby('case_id','asc')->get();
-        return view('case.caseReport',compact('casez'));
+        $case =pCase::find($id);
+        //dd($casez);
+       $supportIds =charity_support_pCase::where('case_id','=',$case->Nid)->select('support_id')->get();
+       $supports = support::whereIn('id', $supportIds)->get();
+       //dd($supports);
+       return view('case.caseReport')->with('casez',$case)->with('supports',$supports);
     }
     public function pubSearch()
     {
