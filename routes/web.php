@@ -69,10 +69,6 @@ Route::view('/tryhomgeepa', 'homex');
 Route::view('/charprof', 'charity/charPro');
 
 //***  show public search
-<<<<<<< HEAD
-Route::get('/publicSearch', 'HomeController@pubSearch');
+Route::get('/publicSearch', 'HomeController@pubSearch')->name('publicSearch');
 Route::view('/register', 'case/register');
 Route::post('/register','Auth\RegisterController@createCase')->name('registerCase');
-=======
-Route::get('/publicSearch', 'HomeController@pubSearch')->name('publicSearch');
->>>>>>> 6961ffd5d994ed7aa78dcacfdb81571a3a654bdf

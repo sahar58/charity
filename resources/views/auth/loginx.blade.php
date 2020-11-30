@@ -12,7 +12,7 @@
 <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 <link href="{{ asset('css/loginAndRegister.css') }}" rel="stylesheet">
 </head>
-<div class="limiter">
+<div class="limiter" style=" margin-top: 100px;">
 		<div class="container-login100">
 			<div class="wrap-login100">
                     <form method="POST" action="{{route('checkPcase')}}" class="login100-form validate-form">
