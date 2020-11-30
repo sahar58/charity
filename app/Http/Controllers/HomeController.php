@@ -18,7 +18,8 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth')->except(['pubSearch','pubSearchPro']);
+       // $this->middleware('auth')->except(['pubSearch','pubSearchPro']);
+       $this->middleware('auth:charity');
     }
 
     /**
@@ -35,9 +36,11 @@ class HomeController extends Controller
         $case =pCase::find($id);
         //dd($casez);
        $supportIds =charity_support_pCase::where('case_id','=',$case->Nid)->select('support_id')->get();
+       $charityIds =charity_support_pCase::where('case_id','=',$case->Nid)->select('charity_id')->get();
        $supports = support::whereIn('id', $supportIds)->get();
+       $charities = charity::whereIn('id', $charityIds )->get();
        //dd($supports);
-       return view('case.caseReport')->with('casez',$case)->with('supports',$supports);
+       return view('case.caseReport')->with('casez',$case)->with('supports',$supports)->with('charities',$charities);
     }
     public function pubSearch()
     {

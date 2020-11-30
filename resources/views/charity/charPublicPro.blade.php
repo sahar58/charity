@@ -1,4 +1,4 @@
-@extends('layouts.charityDash')
+@extends('layouts.app')
 
 @section('content')
 

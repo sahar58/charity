@@ -53,15 +53,26 @@ Route::resource('/home','HomeController');
 
 Route::get('/showPublicProfile/{pCase_id}', 'HomeController@pubSearchPro')->name('home.pubSearchPro');
 
+
+Route::get('/updateCaseSupport/{supportId}/{userid}', 'charityController@updateCaseSupport')->name('charity.updatesupport');
+
+
+Route::get('/galleryz',function () {
+    return view('Gallery/gallery');
+})->name('galleryz');
 ##############endregion
 // show home page
-Route::view('/tryhomepage', 'home');
+Route::view('/tryhomgeepa', 'homex');
 //**  show charity public profile page
 //Route::view('/charprof', 'charity/charPublicPro');
 //***  show charity profile
 Route::view('/charprof', 'charity/charPro');
 
 //***  show public search
+<<<<<<< HEAD
 Route::get('/publicSearch', 'HomeController@pubSearch');
 Route::view('/register', 'case/register');
 Route::post('/register','Auth\RegisterController@createCase')->name('registerCase');
+=======
+Route::get('/publicSearch', 'HomeController@pubSearch')->name('publicSearch');
+>>>>>>> 6961ffd5d994ed7aa78dcacfdb81571a3a654bdf
