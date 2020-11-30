@@ -2,10 +2,17 @@
 
 namespace App\Http\Controllers;
 use App\charity;
+use App\charity_support_pCase;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class charityController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth:charity');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -63,6 +70,7 @@ class charityController extends Controller
         return view ('admin.edit',compact('admin'));
     }
 
+    
     /**
      * Update the specified resource in storage.
      *
@@ -75,6 +83,19 @@ class charityController extends Controller
         $request->validate(['name'=>'required','email'=>'required','password'=>'required','address'=>'required','phone'=>'required','charity_number'=>'required']);     
         $charity->update($request->all());
         return redirect()->route('charity.index');
+    }
+
+    public function updateCaseSupport($supportId, $userid)
+    {
+        $char= Auth::guard('charity')->user();
+        $id = $char->id; 
+       // $request->validate(['name'=>'required','email'=>'required','password'=>'required','address'=>'required','phone'=>'required','charity_number'=>'required']);     
+       charity_support_pCase::where([
+        ['support_id', '=', $supportId],
+        ['case_id', '=', $userid]] )->update(['charity_id' => $id ]);
+        //$charity->update($request->all());
+        
+       // return redirect()->route('charity.pubSearchPro',$id=$userid);
     }
     public function charityHome()
     {

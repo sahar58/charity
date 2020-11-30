@@ -73,7 +73,7 @@ class LoginController extends Controller
         ]);
         if(Auth::guard('charity')->attempt(['email'=>$request->email , 'password'=> $request->password]))
         {
-            return redirect()->intended(' charity/home');
+            return redirect()->intended('charity/home');
         }
         return back()->withInput($request->only('email'));
     }
