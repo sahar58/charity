@@ -80,7 +80,7 @@ class LoginController extends Controller
     //pCase Login
     public function showpCaseLogin()
     {
-        return view('pCase.login');
+        return view('auth.loginx');
     }
     public function checkpCaseLogin(Request $request)
     {
@@ -90,7 +90,7 @@ class LoginController extends Controller
         ]);
         if(Auth::guard('pCase')->attempt(['email'=>$request->email , 'password'=> $request->password]))
         {
-            return redirect()->intended(' pCase/home');
+            return redirect()->intended('/homex');
         }
         return back()->withInput($request->only('email'));
     }

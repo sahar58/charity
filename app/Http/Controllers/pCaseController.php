@@ -79,7 +79,7 @@ class pCaseController extends Controller
 
     public function caseHome()
     {
-        return view('home');
+        return view('homex');
     }
     /**
      * Remove the specified resource from storage.

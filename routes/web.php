@@ -33,6 +33,10 @@ Auth::routes();
 Route::get('/charity/login', 'Auth\LoginController@showCharityLogin');
 Route::post('/charity/login', 'Auth\LoginController@checkCharityLogin')->name('checkCharity');
 Route::get('/charity/home', 'charityController@charityHome');
+Auth::routes();
+Route::get('/case/login', 'Auth\LoginController@showPcaseLogin');
+Route::post('/case/login', 'Auth\LoginController@checkPcaseLogin')->name('checkPcase');
+Route::get('/case/home', 'pCaseController@caseHome');
 
 //Route::view('admin/home', 'admin')->middleware('auth');
 
@@ -59,3 +63,5 @@ Route::view('/charprof', 'charity/charPro');
 
 //***  show public search
 Route::get('/publicSearch', 'HomeController@pubSearch');
+Route::view('/register', 'case/register');
+Route::post('/register','Auth\RegisterController@createCase')->name('registerCase');
