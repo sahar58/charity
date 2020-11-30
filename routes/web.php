@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 //Auth::routes();
 
- Route::get('/home', 'HomeController@index')->name('home');
+ Route::get('/homex', 'HomeController@index')->name('home');
 
 // Auth::routes();
 
@@ -45,9 +45,9 @@ Route::get('/admin/charities','adminController@getAllCharities')->name('admin.ch
 Route::resource('/charity','charityController');
 Route::resource('/admin','charityController');
 Route::resource('/pCase','pCaseController');
+Route::resource('/home','HomeController');
 
-
-
+Route::get('/showPublicProfile/{pCase}', 'HomeController@pubSearchPro')->name('home.pubSearchPro');
 
 ##############endregion
 // show home page
@@ -56,3 +56,6 @@ Route::view('/tryhomepage', 'home');
 //Route::view('/charprof', 'charity/charPublicPro');
 //***  show charity profile
 Route::view('/charprof', 'charity/charPro');
+
+//***  show public search
+Route::get('/publicSearch', 'HomeController@pubSearch');

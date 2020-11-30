@@ -3,8 +3,8 @@
 @section('content')
 <div class="container-fluid">
 		<div class="row">
-				 <nav id="nav-search" class="col-8 navbar navbar-expand-sm bg-dark navbar-dark">
-				  <form class="form-inline " action="/action_page.php">
+		<div id="nav-search" class="col-8 " style="margin-top: 80px; ">
+				  <form class="form-inline " action="/action_page.php" >
 				    <!-- Actual search box -->
 					  <div class="form-group has-search">
 						  <button type="button" class="btn btn-primary">بحث</button>&nbsp
@@ -14,29 +14,7 @@
 					
 					
 				  </form>
-				</nav>
-				<!--<nav class="col-2 navbar navbar-expand-sm bg-dark navbar-dark"></nav>-->
-			<nav id="nav-menu" class="col-4 navbar navbar-expand-sm bg-dark navbar-dark">
-				
-
-				  <!-- Links -->
-				  <ul class="navbar-nav">
-				  	<li class="nav-item">
-					  <a class="nav-link" href="#" > <h4 >
-					  <span><i class="fas fa-undo" style="color: red"></i>
-					  </span>	
-					  </h4></a>
-					</li>
-					<li class="nav-item">
-					  <a class="nav-link" href="#" style="color: #007bff;"> <h5>المنتفعين
-					  </h5></a>
-					</li>
-					
-				
-				
-			
-				  </ul>
-			</nav> 
+				</div>
 			 
 		</div>
 		<br>
