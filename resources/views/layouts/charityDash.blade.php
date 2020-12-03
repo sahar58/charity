@@ -1,18 +1,44 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-<link rel="stylesheet" href="{{ asset('charityPro/css/bootstrap.min.css') }} ">
-	    <link rel="stylesheet" href="{{ asset('charityPro/css/boot.css') }} ">
-      <link rel="stylesheet" href=" {{ asset('charityPro/css/style.css') }}">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-	     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-	     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
-	     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'charity') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('homepage/css/animate.css') }}" rel="stylesheet">
+    
+    <!--Bootstrap css file-->
+    <link href="{{ asset('homepage/css/bootstrap.min.css') }}" rel="stylesheet">
+    
+    <!--FontAwasem file-->
+    <link href="{{ asset('homepage/css/font-awesome.min.css') }}" rel="stylesheet">
+    
+    <!--google-fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300&display=swap" rel="stylesheet">
+    <!--Owl Carousel file-->
+    <link href="{{ asset('homepage/css/slick.css') }}" rel="stylesheet">
+    <link href="{{ asset('homepage/css/slick-theme.css') }}" rel="stylesheet">
+    
+    <!--Main css file-->
+    <link href="{{ asset('homepage/css/style.css') }}" rel="stylesheet">
+    
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-dark primary-color  fixed-top" style="background:linear-gradient(90deg, #3c3b3f 0%,#605c3c 100% );;">
+        <nav class="navbar navbar-expand-lg navbar-dark primary-color  fixed-top" >
             <div class="container">
             
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -22,7 +48,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                    
-                    <ul class="navbar-nav mr-auto">
+                    <ul class="navbar-nav ml-auto">
                     <a class="navbar-brand">
                      <img src="{{ asset('homepage/img/logo-icon.png') }}" alt="logo"  >
                         <a>
@@ -37,12 +63,23 @@
                                 </li>
                             @endif
                         @else
+                        
+
+                            <li class="nav-item">
+                                    <a class="nav-link squared-block" href="{{ route('publicSearch') }}">البحث</a>
+                                </li>
+
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::guard('charity')->user()->name }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('charProfile') }}"  >
+                                        الملف الشخصى
+                                    </a>
+                                   
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -60,39 +97,124 @@
                     <!--##########################################
                     ###########################################
                     #####################################################-->
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="{{ route('charity.login') }}">الرئيسيه
+                                    <span class="sr-only">(current)</span>
+                                </a>
+                            </li>
+                           
+
+                        </ul>
+                    <!-- Links -->
+                                        </div>
+                                        <!-- Collapsible content -->
+                                    
+
+                        </ul>   
                 </div>
             </div>
         </nav>
-    </div>
 
-        <main class="container-fluid py-4">
+        <main class="py-4">
             @yield('content')
         </main>
-   <!-- footer ######################### -->
+    </div>
 
-   <footer class="main-footer">
+
+<!-- footer ######################### -->
+
+<footer class="main-footer">
         <!-- main-footer -->
         <div class="footer-main">
             <div class="container">
                 <div class="row">
 
+                    <div class="col-md-5">
+                        <div class="footer-col">
+                            <div class="footer-content">
+                                <h4 class="footer-title">تواصل معنا <span class="title-under"></span></h4>
+                                <div class="footer-form">
+                                    <form action="php/mail.php" class="ajax-form">
+                                        <div class="form-group">
+                                            <input type="text" name="name" class="form-control" placeholder="الاسم"
+                                                required>
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="email" name="email" class="form-control"
+                                                placeholder="البريد الالكترونى" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <textarea name="message" class="form-control" placeholder="رسالتك"
+                                                required></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-submit pull-right">Send
+                                                message</button>
+                                        </div>
+                                    </form>
+                                </div>
+                                <br>
+                                <div class=icon-col text-right">
+                                    <ul>
+                                        <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a href="#"><i class="fa fa-youtube"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-3">
+                        <div class="footer-col">
+                            <div class="footer-content col-serv">
+                                <ul>
+                                    <a href="#">
+                                        <li>التبرعات</li>
+                                    </a>
+                                    <a href="#">
+                                        <li>التقائتنا</li>
+                                    </a>
+                                    <a href="#">
+                                        <li>القوافل</li>
+                                    </a>
+                                    <a href="#">
+                                        <li> شركائنا</li>
+                                    </a>
+                                    <a href="#">
+                                        <li>سياسات الخصوصيه</li>
+                                    </a>
+                                    <a href="#">
+                                        <li>النشاطات</li>
+                                    </a>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="footer-col">
+                            <div class="footer-content footer-contact">
+                                <img src="{{ asset('homepage/img/logo.png') }}" alt="eltkaa" class="logo-footer">
+                                <p>..تواصلكم معنا ينقذ حياه </p>
+                                <p>تليفون : 19099</p>
+                                <p>contact_us@eltkaa.net</p>
+                            </div>
+                        </div>
+                    </div>
                     <div class="clearfix"></div>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
             <div class="container text-center">
-                eltkaa @ copyrights 2020 - by <a href="http://www.eltkaa.net" target="_blank">Funny Coders</a>
+                eltkaa @ copyrights 2020 - by <a href="" target="_blank" style="color: #c5c5c5;">Funny Coders</a>
             </div>
         </div>
     </footer> <!-- main-footer -->
-
-    
-	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
-
-<script src="{{ asset('charityPro/js/html5shiv.min.js') }}" defer ></script>
-   <script src="{{ asset('charityPro/js/jquery-3.5.1.min.js') }}" defer ></script>
-   <script  src="{{ asset('charityPro/js/bootstrap.min.js') }}" defer ></script>
-
+    <script src="{{ asset('homepage/js/bootstrap.min.js') }}" defer ></script>
 </body>
 </html>

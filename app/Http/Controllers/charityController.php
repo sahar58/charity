@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 use App\charity;
 use App\charity_support_pCase;
+use App\charity_support;
+use App\support;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+
 
 class charityController extends Controller
 {
@@ -96,6 +99,17 @@ class charityController extends Controller
         //$charity->update($request->all());
         
        // return redirect()->route('charity.pubSearchPro',$id=$userid);
+    }
+    public function charityProfile()
+    {
+        $char= Auth::guard('charity')->user();
+        $id = $char->id; 
+        $charity = charity::where('id','=',$id)->get();
+        $charitySupportIds = charity_support::where('charity_id','=',$id)->select('support_id')->get();
+        $supports = support::whereIn('id', $charitySupportIds)->get();
+      // dd($supports);
+        return view('charity.charPublicPro',compact('charity','supports'));
+      // return view('charity.charPro',compact('charity','supports'));
     }
     public function charityHome()
     {

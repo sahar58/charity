@@ -26,7 +26,9 @@
 </head>
 
 <!-- ////////////////////////carousel section///////////////////////// -->
-<section id="carousel">
+</section>
+    <!-- ////////////////////////carousel section///////////////////////// -->
+    <section id="carousel">
     <div id="first-carousel" class=" carousel slide " data-ride="carousel">
 
 
@@ -61,15 +63,15 @@
 
         <!--carousel controls-->
 
-        <a class="carousel-control-prev" href="#first-carousel" data-slide="prev">
+            <a class="carousel-control-prev" href="#first-carousel" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </a>
             <a class="carousel-control-next" href="#first-carousel" data-slide="next">
                 <span class="carousel-control-next-icon"></span>
             </a>
 
-        <!-- indicators  -->
-        <ol class="carousel-indicators">
+            <!-- indicators  -->
+            <ol class="carousel-indicators">
                 <li data-target="#first-carousel" data-slide-to="0" class="active">
                 </li>
                 <li data-target="#first-carousel" data-slide-to="1"></li>
@@ -78,8 +80,7 @@
                 <li data-target="#first-carousel" data-slide-to="4"></li>
                 <li data-target="#first-carousel" data-slide-to="5"></li>
             </ol>
-    </div>
-
+        </div>
     </div>
 </section>
 <!-- /////////////////////////End of carousel section///////////////////////// -->
@@ -167,7 +168,7 @@
                     <div class="card">
                         <!-- Card image -->
                         <div class="view overlay">
-                            <img class="card-img-top" src="{{ asset('homepage/img/learn2.jpeg') }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset('homepage/img/icon/classmates.png') }}" alt="Card image cap">
                             <a>
                                 <div class="mask rgba-white-slight"></div>
                             </a>
@@ -181,8 +182,7 @@
                             <!-- Text -->
                             <p class="card-text">التعليم هو مستقبل أي أمة باذن الله،
                                 فالشعب المتعلم هو الذي يستطيع ان يميز بين الافكار البناءة والافكار الهدامة.</p>
-                            <button class="btn btn-indigo btn-rounded btn-md">Read more</button>
-                        </div>
+                            </div>
                     </div>
                     <!-- Card -->
                 </div>
@@ -194,7 +194,7 @@
                     <div class="card">
                         <!-- Card image -->
                         <div class="view overlay">
-                            <img class="card-img-top" src="{{ asset('homepage/img/learn2.jpeg') }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset('homepage/img/icon/healthcare.png') }}"  style=" height: 253px;"alt="Card image cap">
                             <a>
                                 <div class="mask rgba-white-slight"></div>
                             </a>
@@ -210,7 +210,7 @@
                                 مثل الأنفلونزا وفيروس العوز المناعي البشري،
                                 والأمراض غير السارية، من قبيل السرطان وأمراض القلب،
                                 ونساعد الأمهات والأطفال في البقاء على قيد الحياة</p>
-                            <button class="btn btn-indigo btn-rounded btn-md">Read more</button>
+                            
                         </div>
                     </div>
                     <!-- Card -->
@@ -223,7 +223,7 @@
                     <div class="card">
                         <!-- Card image -->
                         <div class="view overlay">
-                            <img class="card-img-top" src="{{ asset('homepage/img/learn2.jpeg') }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset('homepage/img/icon/diet.png') }}" alt="Card image cap">
                             <a>
                                 <div class="mask rgba-white-slight"></div>
                             </a>
@@ -237,8 +237,7 @@
                             <!-- Text -->
                             <p class="card-text">التعليم هو مستقبل أي أمة باذن الله،
                                 فالشعب المتعلم هو الذي يستطيع ان يميز بين الافكار البناءة والافكار الهدامة.</p>
-                            <button class="btn btn-indigo btn-rounded btn-md">Read more</button>
-                        </div>
+                             </div>
                     </div>
                     <!-- Card -->
                 </div>
@@ -251,7 +250,7 @@
                     <div class="card">
                         <!-- Card image -->
                         <div class="view overlay">
-                            <img class="card-img-top" src="{{ asset('homepage/img/learn2.jpeg') }}" alt="Card image cap">
+                            <img class="card-img-top" src="{{ asset('homepage/img/icon/fashion.png') }}" alt="Card image cap">
                             <a>
                                 <div class="mask rgba-white-slight"></div>
                             </a>
@@ -265,8 +264,7 @@
                             <!-- Text -->
                             <p class="card-text">التعليم هو مستقبل أي أمة باذن الله،
                                 فالشعب المتعلم هو الذي يستطيع ان يميز بين الافكار البناءة والافكار الهدامة.</p>
-                            <button class="btn btn-indigo btn-rounded btn-md">Read more</button>
-                        </div>
+                            </div>
                     </div>
                     <!-- Card -->
                 </div>

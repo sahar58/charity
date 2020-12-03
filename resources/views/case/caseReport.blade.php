@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.charityDash')
 @section('content')
 
 <head>
@@ -25,32 +25,22 @@
 <P>:نوع الدعم
     <ul style="direction:rtl">
    
-    @foreach($supports as $support )
+    @foreach($supports as $index=> $support )
       <li>
       <ul class="list-group list-group-horizontal">
         <li class="list-group-item"> {{$support->support}} </li>
   
         <li class="list-group-item"><a href="{{ route('charity.updatesupport',['supportId'=>$support->id,'userid'=>$casez->Nid]) }}" class="btn btn-success btn-sm">مساعدة</a></li>
-     
+        <li class="list-group-item">
+        @foreach($charities[$index] as $charityx)
+         {{$charityx->name}}@endforeach </li>
+         
     </ul>
     </li>
     @endforeach
    
     <ul>
-    <P>:الجمعيات الداعمة
-    <ul style="direction:rtl">
-   
-   @foreach($charities as $charity)
-     <li>
-     
-     {{$charity->name}} 
- 
-   
-   </li>
-   @endforeach
-  
-   <ul>
-</P>
+    
 <ul class="a" style="text-align: right;" dir="rtl">
 
     

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.charityDash')
 
 @section('content')
 
@@ -71,10 +71,11 @@
         <td>{{$item->birth_date}}</td>
         <td>{{$item->monthly_treatment}}</td>
         <td>
-        @foreach($data['support'] as $itemx) 
-        @if($itemx->case_id == $item->Nid)
-         {{$itemx->support_id}}<br>
-        @endif
+        @foreach($support[$item->name] as  $itemx) 
+      
+        
+         {{$itemx->support}}<br>
+       
         @endforeach
         </td>
         <td>

@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('homex');
 });
 
 //Auth::routes();
@@ -30,9 +30,10 @@ Route::get('/admin/home', 'adminController@adminHome');
 
 Auth::routes();
 
-Route::get('/charity/login', 'Auth\LoginController@showCharityLogin');
+Route::get('/charity/login', 'Auth\LoginController@showCharityLogin')->name('charity.login');
 Route::post('/charity/login', 'Auth\LoginController@checkCharityLogin')->name('checkCharity');
 Route::get('/charity/home', 'charityController@charityHome');
+Route::get('/charity/Profile', 'charityController@charityProfile')->name('charProfile');
 Auth::routes();
 Route::get('/case/login', 'Auth\LoginController@showPcaseLogin');
 Route::post('/case/login', 'Auth\LoginController@checkPcaseLogin')->name('checkPcase');
@@ -62,7 +63,7 @@ Route::get('/galleryz',function () {
 })->name('galleryz');
 ##############endregion
 // show home page
-Route::view('/tryhomgeepa', 'homex');
+Route::view('/home_page', 'homex')->name('homePage');
 //**  show charity public profile page
 //Route::view('/charprof', 'charity/charPublicPro');
 //***  show charity profile

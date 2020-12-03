@@ -55,7 +55,7 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">تسجيل الدخول</a>
+                                <a class="nav-link" href="{{ route('charity.login') }}">تسجيل الدخول</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
@@ -76,6 +76,9 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('charProfile') }}"  >
+                                        الملف الشخصى
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -96,15 +99,15 @@
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="#">الرئيسيه
+                                <a class="nav-link" href="{{ route('charity.login') }}">الرئيسيه
                                     <span class="sr-only">(current)</span>
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">عن التقاء</a>
+                                <a class="nav-link" href="#about">عن التقاء</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">شراكئنا</a>
+                                <a class="nav-link" href="#testimonials">شراكئنا</a>
                             </li>
 
                             <!-- Dropdown -->
@@ -112,17 +115,17 @@
                                 <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
                                     aria-haspopup="true" aria-expanded="false">الانشطه</a>
                                 <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">دعم الطعام</a>
-                                    <a class="dropdown-item" href="#">دعم الصحه</a>
-                                    <a class="dropdown-item" href="#">دعم التعليم</a>
-                                    <a class="dropdown-item" href="#">دعم الملبس</a>
-                                    <a class="dropdown-item" href="#">دعم المأوى</a>
+                                    <a class="dropdown-item" href="#support">دعم الطعام</a>
+                                    <a class="dropdown-item" href="#support">دعم الصحه</a>
+                                    <a class="dropdown-item" href="#support">دعم التعليم</a>
+                                    <a class="dropdown-item" href="#support">دعم الملابس</a>
+                                   
                                     <a class="dropdown-item" href="#">اخرى</a>
                                 </div>
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="#">تواصل معنا</a>
+                                <a class="nav-link" href="#contactUs">تواصل معنا</a>
                             </li>
 
                         </ul>
@@ -151,7 +154,7 @@
                 <div class="row">
 
                     <div class="col-md-5">
-                        <div class="footer-col">
+                        <div class="footer-col" id="contactUs">
                             <div class="footer-content">
                                 <h4 class="footer-title">تواصل معنا <span class="title-under"></span></h4>
                                 <div class="footer-form">
