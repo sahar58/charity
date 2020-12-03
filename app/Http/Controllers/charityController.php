@@ -108,8 +108,8 @@ class charityController extends Controller
         $charitySupportIds = charity_support::where('charity_id','=',$id)->select('support_id')->get();
         $supports = support::whereIn('id', $charitySupportIds)->get();
       // dd($supports);
-        return view('charity.charPublicPro',compact('charity','supports'));
-      // return view('charity.charPro',compact('charity','supports'));
+       // return view('charity.charPublicPro',compact('charity','supports'));
+      return view('charity.charPro',compact('charity','supports'));
     }
     public function charityHome()
     {

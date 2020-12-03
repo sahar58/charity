@@ -16,7 +16,13 @@
 
 <P>التليفون: {{$casez->phone}}</P> <br>
 
-<P>الحالة الاجتماعية:{{$casez->marital_status}} </P><br>
+<P>الحالة الاجتماعية:
+@if($casez->marital_status==1)
+متزوج
+@else
+غير متزوج
+@endif
+ </P><br>
 
 
     <P>عدد الاطفال: {{$casez->children_number}}</P> <br>

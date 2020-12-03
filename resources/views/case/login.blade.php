@@ -1,4 +1,4 @@
-@extends('layouts.login')
+@extends('layouts.charityDash')
 
 @section('content')
 <div class="limiter" style=" margin-top: 100px;">

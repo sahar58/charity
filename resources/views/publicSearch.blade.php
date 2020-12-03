@@ -69,7 +69,14 @@
         <td>{{$item->name}}</td>
         <td>{{$item->address}}</td>
         <td>{{$item->birth_date}}</td>
-        <td>{{$item->monthly_treatment}}</td>
+        <td>
+        @if($item->monthly_treatment == 1)
+        نعم
+        @else
+        لا
+        @endif
+        
+        </td>
         <td>
         @foreach($support[$item->name] as  $itemx) 
       

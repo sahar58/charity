@@ -1,7 +1,18 @@
-@extends('layouts.login')
+@extends('layouts.charityDash')
 
 @section('content')
 
+<head>
+    
+   
+	    
+<link rel="icon" type="image/png" href="{{ asset('login/img/favicon.ico') }}"/>
+
+<link href="{{ asset('login/css/stylereg.css') }}" rel="stylesheet">
+<link href="{{ asset('login/fonts/iconic/css/icon.css') }}" rel="stylesheet">
+<link href="{{ asset('login/fonts/font-awesome-4.7.0/css/font-awesome.min.css') }}" rel="stylesheet">
+<link href="{{ asset('login/css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
 <section class="signup">
             <!-- <img src="images/signup-bg.jpg" alt=""> -->
             <div class="container">
@@ -95,4 +106,11 @@
                 </div>
             </div>
         </section>
+
+        
+        <script src="{{ asset('login/js/popper.js') }}" defer></script>
+        <script src="{{ asset('login/js/bootstrap.min.js') }}" defer></script>
+        <script src="{{ asset('login/js/jquery-3.2.1.min.js') }}" defer></script>
+        <script src="{{ asset('login/js/mainreg.js') }}" defer></script>
+        
 @endsection
